@@ -1,0 +1,9 @@
+{
+  "name": "advent2018",
+  "version": "0",
+  "author": "mike castleman <m@mlcastle.net>",
+  "private": true,
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}
