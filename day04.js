@@ -32,15 +32,16 @@ input.forEach(line => {
   }
 });
 
+const findSleepiestMinute = st =>
+  maxBy(Object.entries(countBy(st)), ([k, v]) => v);
+
 const [sleepiestGuard, sleepTimes] = maxBy(
   Object.entries(guards),
   ([k, v]) => v.length
 );
-const [sneakMin] = maxBy(Object.entries(countBy(sleepTimes)), ([k, v]) => v);
+const [sneakMin] = findSleepiestMinute(sleepTimes);
 console.log(Number(sleepiestGuard) * Number(sneakMin));
 
-const ppp = mapValues(guards, st =>
-  maxBy(Object.entries(countBy(st)), ([k, v]) => v)
-);
+const ppp = mapValues(guards, findSleepiestMinute);
 const [g2, [m2]] = maxBy(Object.entries(ppp), ([g2, [_, m3]]) => m3);
 console.log(Number(g2) * Number(m2));
