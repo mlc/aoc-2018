@@ -1,5 +1,4 @@
 const { range } = require("lodash");
-
 const fs = require("fs");
 
 const re = /^#([0-9]+) @ ([0-9]+),([0-9]+): ([0-9]+)x([0-9]+)$/;
