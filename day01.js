@@ -1,9 +1,9 @@
-const fs = require("fs");
+const fs = require('fs');
 
 const ns = fs
-  .readFileSync("input01", "utf-8")
+  .readFileSync('input01', 'utf-8')
   .trim()
-  .split("\n")
+  .split('\n')
   .map(Number);
 
 console.log(ns.reduce((a, b) => a + b));

@@ -1,9 +1,9 @@
-const fs = require("fs");
+const fs = require('fs');
 
 const input = fs
-  .readFileSync("input02", "utf-8")
+  .readFileSync('input02', 'utf-8')
   .trim()
-  .split("\n");
+  .split('\n');
 
 // const input = [
 //   "abcdef",
@@ -29,9 +29,9 @@ console.log(
     finds.filter(p => Object.values(p).includes(3)).length
 );
 
-const pairs = [].concat(...input.map(i => input.map(j => [i,j])));
+const pairs = [].concat(...input.map(i => input.map(j => [i, j])));
 
-const p = pairs.find(([a,b]) => {
+const p = pairs.find(([a, b]) => {
   let mismatch = 0;
   for (let i = 0; i < a.length; i++) {
     if (a[i] !== b[i]) {

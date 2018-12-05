@@ -1,10 +1,10 @@
-const { countBy, mapValues, maxBy, range } = require("lodash");
-const fs = require("fs");
+const { countBy, mapValues, maxBy, range } = require('lodash');
+const fs = require('fs');
 
 const input = fs
-  .readFileSync("input04", "utf-8")
+  .readFileSync('input04', 'utf-8')
   .trim()
-  .split("\n")
+  .split('\n')
   .sort();
 
 const guards = {};
@@ -13,7 +13,7 @@ const newshift = /^\[[0-9 :-]+\] Guard #([0-9]+) begins shift$/;
 const asleep = /^\[[0-9-]+ 00:([0-9][0-9])\] falls asleep$/;
 const awake = /^\[[0-9-]+ 00:([0-9][0-9])\] wakes up$/;
 
-let curguard = "0";
+let curguard = '0';
 let asleeptime = 0;
 input.forEach(line => {
   const m1 = line.match(newshift);
