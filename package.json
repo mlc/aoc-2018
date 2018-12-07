@@ -4,7 +4,8 @@
   "author": "mike castleman <m@mlcastle.net>",
   "private": true,
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {
     "husky": "^1.2.0",
