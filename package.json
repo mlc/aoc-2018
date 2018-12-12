@@ -4,6 +4,7 @@
   "author": "mike castleman <m@mlcastle.net>",
   "private": true,
   "dependencies": {
+    "canvas": "^2.2.0",
     "lodash": "^4.17.11",
     "node-fetch": "^2.3.0"
   },

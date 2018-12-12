@@ -1,3 +1,4 @@
+const { createCanvas } = require('canvas');
 const { range, sum } = require('lodash');
 const fs = require('fs');
 
@@ -18,6 +19,12 @@ let min = 0;
 let iter499 = 0;
 
 const score = () => sum(range(min, state.length).filter(i => state[i] === '#'));
+
+const canvas = createCanvas(1300, 1000);
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = '#ffffff';
+ctx.fillRect(0, 0, 1300, 1000);
+ctx.fillStyle = '#007f00';
 
 range(1, 501).forEach(iter => {
   const newState = [];
@@ -45,7 +52,15 @@ range(1, 501).forEach(iter => {
   } else if (iter === 499) {
     iter499 = score();
   }
+
+  range(min, state.length).forEach(i => {
+    if (state[i] === '#') {
+      ctx.fillRect(2 * i + 20, 2 * (iter - 1), 2, 2);
+    }
+  });
 });
 
 const dscore = score() - iter499;
 console.log((50000000000 - 499) * dscore + iter499);
+
+fs.writeFileSync('vis12.png', canvas.toBuffer('image/png'));
