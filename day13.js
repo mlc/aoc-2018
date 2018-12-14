@@ -65,26 +65,10 @@ while (true) {
 
       switch (input[y][x]) {
         case '\\':
-          if (dx === 1) {
-            cart.v = [0, 1];
-          } else if (dx === -1) {
-            cart.v = [0, -1];
-          } else if (dy === 1) {
-            cart.v = [1, 0];
-          } else {
-            cart.v = [-1, 0];
-          }
+          cart.v = [dy, dx];
           break;
         case '/':
-          if (dx === 1) {
-            cart.v = [0, -1];
-          } else if (dx === -1) {
-            cart.v = [0, 1];
-          } else if (dy === 1) {
-            cart.v = [-1, 0];
-          } else {
-            cart.v = [1, 0];
-          }
+          cart.v = [-dy, -dx];
           break;
         case '+':
           cart.v = applyOp(cart.v, cart.op);
